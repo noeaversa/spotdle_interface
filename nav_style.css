@@ -11,10 +11,7 @@ body, html{
     width: 100%;
     font-family: Spotify;
     font-weight: 700;
-
 }
-
-
 
 #navbar{
     justify-content: center;
@@ -70,7 +67,14 @@ body, html{
     padding-right: 20px;
 }
 
-#album-content{
+#lyric{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding-left: 20px;
+}
+
+.container{
     height: 300px;
     width: 300px;
     right: 0;
@@ -83,9 +87,14 @@ body, html{
     flex-direction: column;
 }
 
-.images-index{
+#image-album{
     height: 180px;
     width: 200px;
+}
+
+#image-lyric{
+    height: 180px;
+    width: 220px;
 }
 
 .index{
