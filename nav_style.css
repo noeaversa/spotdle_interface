@@ -1,3 +1,7 @@
+@font-face {
+    font-family: Spotify;
+    src: url(Spotify-Font/GothamLight.ttf);
+}
 body, html{
     background-color: #191414;
     padding: 0;
@@ -5,10 +9,12 @@ body, html{
     display: flex;
     height: 100%;
     width: 100%;
-    font-family: 'Roboto', sans-serif;
+    font-family: Spotify;
     font-weight: 700;
 
 }
+
+
 
 #navbar{
     justify-content: center;
