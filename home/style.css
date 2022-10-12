@@ -1,23 +1,23 @@
 #content{
     position: absolute;
-    height: 60%;
-    top: 25%;
+    top: 20vh;
     width: 100vw;
     display: flex;
+    flex-direction: row;
 }
 
 #album{
     display: flex;
     align-items: flex-end;
     flex-direction: column;
-    width: 50%;
+    width: 50vw;
     padding-right: 20px;
 }
 
 #lyric{
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 50vw;
     padding-left: 20px;
 }
 
@@ -26,7 +26,6 @@
     width: 300px;
     right: 0;
     border: 5px solid#1ed760;
-    border-radius: 10px;
     border-radius: 10px;
     align-items: center;
     justify-content: center;
@@ -51,4 +50,71 @@
 
 .description-index{
     font-size: 20px;
+}
+
+#container-button{
+    display: flex;
+    width: 100vw;
+    top: 82vh;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+}
+
+#LogIn{
+    height: 50px;
+    width: 150px;
+    border: 5px solid#1ed760;
+    border-radius: 10px;
+    background-color: #191414;
+    font-size: 20px;
+    font-family: Spotify;
+    color: #1ed760;
+    font-weight: bold;
+}
+
+#LogIn:hover{
+    background-color: #1ed760;
+    color: white;
+}
+
+@media screen and (max-width: 700px) {
+    #content{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #lyric{
+        margin-top: 10vh;
+        justify-content: center;
+        padding-left: 0px;
+        flex-direction: column;
+    }
+
+    #album{
+        justify-content: center;
+        padding-right: 0px;
+    }
+
+    .container{
+        height: 270px;
+        width: 270px;
+        border-radius: 15px;
+    }
+
+    #image-album{
+        height: 150px;
+        width: 170px;
+    }
+    
+    #image-lyric{
+        height: 150px;
+        width: 190px;
+    }
+
+    #container-button{
+        top: 800px;
+    }
+    
 }
