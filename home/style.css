@@ -118,7 +118,7 @@
     
 }
 
-@media screen and (max-height: 1000px) and (min-height: 751px) and (max-width: 700px){
+@media screen and (max-height: 1000px) and (min-height: 801px) and (max-width: 700px){
     #content{
         top: 15vh;
     }
@@ -128,7 +128,7 @@
     }
 }
 
-@media screen and (max-height: 750px) and (max-width: 600px) {
+@media screen and (max-height: 800px) and (max-width: 600px) {
     #content{
         top: 20vh;
     }
@@ -136,4 +136,27 @@
     #container-button{
         top: 115vh;
     }
+}
+
+@media screen and (max-width: 400px) and (max-height: 700px){
+
+    #container-button{
+        top: 105vh;
+    }
+    .container{
+        height: 220px;
+        width: 220px;
+        border-radius: 15px;
+    }
+
+    #image-album{
+        height: 130px;
+        width: 150px;
+    }
+    
+    #image-lyric{
+        height: 130px;
+        width: 170px;
+    }
+    
 }
