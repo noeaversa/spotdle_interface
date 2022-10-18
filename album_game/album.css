@@ -1,0 +1,24 @@
+#game{
+    top: 27vh;
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#lifes{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.hearts-life{
+    height: 40px;
+    width: 40px;
+}
+
+#heart-right{
+    margin-left: 10px;
+}
