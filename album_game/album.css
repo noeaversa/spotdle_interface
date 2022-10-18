@@ -9,8 +9,8 @@
 }
 
 #album-img{
-    width: 300px;
-    height: 300px;
+    width: 275px;
+    height: 275px;
 }
 
 #lifes{
@@ -21,7 +21,7 @@
 }
 
 .hearts-life{
-    margin-top: 5vh;
+    margin-top: 3vh;
     height: 33px;
     width: 35px;
 }
@@ -33,4 +33,30 @@
 #points{
     color: #1ed760;
     font-size: 20px;
+}
+
+
+#searchbar{
+    margin-top: 2vh;
+    height: 6vh;
+    border-radius: 15px;
+    border: 1px solid #1ed760;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    width: 17vw;
+}
+
+#lupa-search{
+    height: 30px;
+    width: 30px;
+}
+
+#input-search{
+    background-color: #191414;
+    border: #191414;
+    color: #1ed760;
+    font-family: Spotify;
+    height: 20px;
 }
