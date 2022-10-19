@@ -8,9 +8,18 @@
     flex-direction: column;
 }
 
-#album-img{
+#img-container{
     width: 275px;
     height: 275px;
+    overflow: hidden;
+    border: 5px solid blueviolet;
+}
+
+#album-img{
+    width: 500px;
+    height: 500px;
+    margin-top: -225px; /*valores entre 0 y -225*/
+    margin-left: -225px; /*valores entre 0 y -225*/
 }
 
 #lifes{
@@ -66,7 +75,7 @@ textarea:focus, input:focus{
 }
 
 @media screen and (max-width: 300px){
-    #album-img{
+    #img-container{
         width: 250px;
         height: 250px;
     }
