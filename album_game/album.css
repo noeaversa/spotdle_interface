@@ -45,7 +45,7 @@
     justify-content: center;
     display: flex;
     flex-direction: row;
-    width: 17vw;
+    width: 200px;
 }
 
 #lupa-search{
@@ -59,4 +59,15 @@
     color: #1ed760;
     font-family: Spotify;
     height: 20px;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+@media screen and (max-width: 300px){
+    #album-img{
+        width: 250px;
+        height: 250px;
+    }
 }
