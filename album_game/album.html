@@ -34,5 +34,21 @@
         </div>
 
     </div>
+
+    <script>
+        fetch("http://localhost:3000/me/user/topartists", {
+            credentials: "include",
+        }).then(data => data.json()).then(data => {
+            const randN = (Math.floor(Math.random() * data.items.length));
+            console.log(randN)
+            console.log(data.items[randN]);
+            fetch("http://localhost:3000/me/user/artist/albums?id=" + data.items[randN].id, {
+                credentials: "include",
+            }).then(data => data.json()).then(data => {
+                const randN2 = (Math.floor(Math.random() * data.length));
+                console.log(data[randN2]);
+            })
+        });
+    </script>
 </body>
 </html>
