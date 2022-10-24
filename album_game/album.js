@@ -27,9 +27,7 @@ function changeLife(){
     }
 }
 
-function restart(){
-    window.alert("perdiste ESTUPIDO ESTUPIDO ESTUPIDO :)");
-}
+
 
 function verifyKey(){
     let value_input = document.getElementById("input-search").value;
@@ -48,3 +46,8 @@ function enterKeyPressed(event) {
         verifyKey();
     }
  }
+
+ function restart(){
+    window.alert("perdiste ESTUPIDO ESTUPIDO ESTUPIDO :)");
+    lifeCounter = 1;
+}
