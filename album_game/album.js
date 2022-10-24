@@ -69,7 +69,6 @@ function enterKeyPressed(event) {
     lifeCounter = 1;
     /*
         if(totalPointsUser < puntos)
-            totalPointsUser = puntos;
-    */
+            totalPointsUser = puntos;        */
     puntos = 0;
 }
