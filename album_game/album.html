@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/spotdle_interface/nav_style.css">
-    <link rel="stylesheet" href="/spotdle_interface/album_game/album.css"><title>Spotdle | Album</title>
-    <script src="album.js"> </script>
+    <link rel="stylesheet" href="/spotdle_interface/album_game/album.css">
+    <title>Spotdle | Album</title>
+    <script src="album.js"></script>
+    <script>
+        nuevaIMG().then(data => {
+            setIMG(data.image);
+        })
+    </script>
 </head>
+
 <body>
     <nav id="navbar">
         <div id="nav-content-left">
@@ -18,37 +26,22 @@
             <img src="/spotdle_interface/images/user.png" alt="user" id="user" class="images">
         </div>
     </nav>
-   
+
     <div id="game">
         <p id="points">Puntos</p>
         <div id="img-container">
-            <img id="album-img" src="https://www.freeiconspng.com/thumbs/crescent-moon-png/crescent-moon-png-images-29.png" alt="">
+            <img id="album-img"
+                src="https://www.freeiconspng.com/thumbs/crescent-moon-png/crescent-moon-png-images-29.png" alt="">
         </div>
         <div id="lifes">
             <img src="/spotdle_interface/images/corazon_vida.png" alt="" class="hearts-life" id="heart-left">
-            <img src="/spotdle_interface/images/corazon_vida.png" alt="" class="hearts-life" id="heart-right"> 
+            <img src="/spotdle_interface/images/corazon_vida.png" alt="" class="hearts-life" id="heart-right">
         </div>
         <div id="searchbar">
             <img src="/spotdle_interface/images/lupa.png" alt="lupa" id="lupa-search" onclick="verifyKey()">
             <input type="text" placeholder="escriba respuesta" id="input-search" onkeypress="enterKeyPressed(event)">
         </div>
-
     </div>
-
-    <script>
-        fetch("http://localhost:3000/me/user/topartists", {
-            credentials: "include",
-        }).then(data => data.json()).then(data => {
-            const randN = (Math.floor(Math.random() * data.items.length));
-            console.log(randN)
-            console.log(data.items[randN]);
-            fetch("http://localhost:3000/me/user/artist/albums?id=" + data.items[randN].id, {
-                credentials: "include",
-            }).then(data => data.json()).then(data => {
-                const randN2 = (Math.floor(Math.random() * data.length));
-                console.log(data[randN2]);
-            })
-        });
-    </script>
 </body>
+
 </html>

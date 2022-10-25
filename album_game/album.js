@@ -1,12 +1,55 @@
 let lifeCounter = 1;
 let puntos = 0;
+let name_album;
 //let totalPointsUser = algo de la api;
+
+function nuevaIMG(){
+    return new Promise(function(resolve, reject) {
+        fetch("http://localhost:3000/me/user/topartists", {
+            credentials: "include",
+        }).then(data => data.json()).then(data => {
+            const randN = (Math.floor(Math.random() * data.items.length));
+            console.log(randN)
+            console.log(data.items[randN]);
+            fetch("http://localhost:3000/me/user/artist/albums?id=" + data.items[randN].id, {
+                credentials: "include",
+            }).then(data => data.json()).then(data => {
+                const randN2 = (Math.floor(Math.random() * data.length));
+                console.log(data[randN2]);
+                name_album = data[randN2].name;
+                resolve({
+                    "name": data[randN2].name,
+                    "image": data[randN2].images[0].url
+                })
+            })
+        });      
+    })
+}
+
+
+function toDataUrl(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function() {
+        var reader = new FileReader();
+        reader.onloadend = function() {
+            callback(reader.result);
+        }
+        reader.readAsDataURL(xhr.response);
+    };
+    xhr.open('GET', url);
+    xhr.responseType = 'blob';
+    xhr.send();
+}
 
 function randomNumber(){
     return -(Math.floor(Math.random() * 225) + 1);
 }
 
-function cofigurationImg(){
+function setIMG(imgUrl) {
+    console.log("setIMG");
+    console.log(imgUrl);
+    document.getElementById("album-img").src = imgUrl;
+
     let margin_left = randomNumber();
     let margin_top = randomNumber();
 
@@ -17,7 +60,16 @@ function cofigurationImg(){
 
     image.style.marginLeft = (margin_left + "px");
     image.style.marginTop = (margin_top + "px");
+    console.log("confIMG")
 }
+
+function cofigurationImg(){
+    nuevaIMG().then(data => {
+        toDataUrl(data.image, setIMG);
+    })
+    
+}
+
 
 function changeLife(){
     var imgRight = document.getElementById("heart-right");
@@ -46,9 +98,8 @@ function correctAnswer(){
 
 function verifyKey(){
     let value_input = document.getElementById("input-search").value;
-    let key = "no se";
 
-    if(value_input != key){
+    if(value_input != name_album){
         changeLife();
         lifeCounter--;
     }
