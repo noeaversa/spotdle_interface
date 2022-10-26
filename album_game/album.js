@@ -1,6 +1,8 @@
 let lifeCounter = 1;
 let puntos = 0;
 let name_album;
+let image_url;
+let used_albums_names = [];
 //let totalPointsUser = algo de la api;
 
 function nuevaIMG(){
@@ -13,14 +15,27 @@ function nuevaIMG(){
                 credentials: "include",
             }).then(data => data.json()).then(data => {
                 console.log(data);
-                const filteredData = data.filter(album => album.albumType.toLowerCase() === "album" && album.albumGroup.toLowerCase() === "album");
+                const filteredData = data.filter(album => 
+                    album.albumType.toLowerCase() === "album" 
+                    && album.albumGroup.toLowerCase() === "album" 
+                    && !used_albums_names.includes(album.name.toLowerCase())
+                );
                 const randN2 = (Math.floor(Math.random() * filteredData.length));
-                name_album = filteredData[randN2].name;
-                console.log(filteredData)
-                
+                if(filteredData[randN2] === undefined){
+                    name_album = data[randN2].name;
+                    image_url = data[randN2].images[0].url;
+                }
+                else{
+                    name_album = filteredData[randN2].name;
+                    image_url = filteredData[randN2].images[0].url;
+                    console.log(filteredData)
+                }
+                if(!used_albums_names.includes(name_album.toLowerCase())){
+                    used_albums_names.push(name_album.toLowerCase());
+                }
                 resolve({
-                    "name": filteredData[randN2].name,
-                    "image": filteredData[randN2].images[0].url
+                    "name": name_album,
+                    "image": image_url
                 })
             })
         });      
