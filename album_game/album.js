@@ -9,17 +9,18 @@ function nuevaIMG(){
             credentials: "include",
         }).then(data => data.json()).then(data => {
             const randN = (Math.floor(Math.random() * data.items.length));
-            console.log(randN)
-            console.log(data.items[randN]);
             fetch("http://localhost:3000/me/user/artist/albums?id=" + data.items[randN].id, {
                 credentials: "include",
             }).then(data => data.json()).then(data => {
-                const randN2 = (Math.floor(Math.random() * data.length));
-                console.log(data[randN2]);
-                name_album = data[randN2].name;
+                console.log(data);
+                const filteredData = data.filter(album => album.albumType.toLowerCase() === "album" && album.albumGroup.toLowerCase() === "album");
+                const randN2 = (Math.floor(Math.random() * filteredData.length));
+                name_album = filteredData[randN2].name;
+                console.log(filteredData)
+                
                 resolve({
-                    "name": data[randN2].name,
-                    "image": data[randN2].images[0].url
+                    "name": filteredData[randN2].name,
+                    "image": filteredData[randN2].images[0].url
                 })
             })
         });      
@@ -46,8 +47,6 @@ function randomNumber(){
 }
 
 function setIMG(imgUrl) {
-    console.log("setIMG");
-    console.log(imgUrl);
     document.getElementById("album-img").src = imgUrl;
 
     let margin_left = randomNumber();
@@ -55,15 +54,17 @@ function setIMG(imgUrl) {
 
     let image = document.getElementById("album-img");
 
-    image.style.height = (500 + "px");
-    image.style.width = (500 + "px");
+    image.style.height = (550 + "px");
+    image.style.width = (550 + "px");
 
     image.style.marginLeft = (margin_left + "px");
     image.style.marginTop = (margin_top + "px");
-    console.log("confIMG")
+
+    document.getElementById("album-img").classList.remove("blur");
 }
 
 function cofigurationImg(){
+    document.getElementById("album-img").classList.add("blur");
     nuevaIMG().then(data => {
         toDataUrl(data.image, setIMG);
     })
@@ -99,7 +100,7 @@ function correctAnswer(){
 function verifyKey(){
     let value_input = document.getElementById("input-search").value;
 
-    if(value_input != name_album){
+    if(value_input != name_album && value_input != name_album.toLowerCase()){
         changeLife();
         lifeCounter--;
     }
@@ -107,6 +108,7 @@ function verifyKey(){
         correctAnswer()
         setTimeout(cofigurationImg, 1000);
     }
+    document.getElementById("input-search").value = "";
 }
 
 function enterKeyPressed(event) {
@@ -118,8 +120,6 @@ function enterKeyPressed(event) {
  function restart(){
     window.alert("perdiste ESTUPIDO ESTUPIDO ESTUPIDO :)");
     lifeCounter = 1;
-    /*
-        if(totalPointsUser < puntos)
-            totalPointsUser = puntos;        */
     puntos = 0;
+    window.location.reload();
 }

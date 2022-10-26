@@ -15,10 +15,11 @@
 }
 
 #album-img{
-    width: 500px;
-    height: 500px;
+    width: 550px;
+    height: 550px;
     margin-top: -225px; /*valores entre 0 y -225*/
     margin-left: -225px; /*valores entre 0 y -225*/
+    transition: filter 0.5s;
 }
 
 #lifes{
@@ -68,6 +69,16 @@
     font-family: Spotify;
     width: 150px;
     height: 20px;
+}
+
+.blur {
+    filter: blur(50px);
+    transition: filter 1s;
+}
+
+.not-blur {
+    filter: blur(0px);
+    transition: filter .5s;
 }
 
 textarea:focus, input:focus{
