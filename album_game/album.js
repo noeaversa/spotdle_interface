@@ -15,21 +15,23 @@ function nuevaIMG(){
                 credentials: "include",
             }).then(data => data.json()).then(data => {
                 console.log(data);
+                
                 const filteredData = data.filter(album => 
                     album.albumType.toLowerCase() === "album" 
                     && album.albumGroup.toLowerCase() === "album" 
                     && !used_albums_names.includes(album.name.toLowerCase())
                 );
+
                 const randN2 = (Math.floor(Math.random() * filteredData.length));
                 if(filteredData[randN2] === undefined){
                     name_album = data[randN2].name;
                     image_url = data[randN2].images[0].url;
-                }
-                else{
+                } else{
                     name_album = filteredData[randN2].name;
                     image_url = filteredData[randN2].images[0].url;
                     console.log(filteredData)
                 }
+
                 if(!used_albums_names.includes(name_album.toLowerCase())){
                     used_albums_names.push(name_album.toLowerCase());
                 }
