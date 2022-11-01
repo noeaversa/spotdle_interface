@@ -85,6 +85,11 @@ textarea:focus, input:focus{
     outline: none;
 }
 
+#right-answer{
+    color: #1ed760;
+    font-family: Spotify;
+}
+
 @media screen and (max-width: 300px){
     #img-container{
         width: 250px;

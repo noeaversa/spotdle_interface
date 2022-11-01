@@ -81,6 +81,7 @@ function setIMG(imgUrl) {
 }
 
 function cofigurationImg(){
+    document.getElementById("right-answer").innerText = "";
     document.getElementById("album-img").classList.add("blur");
     nuevaIMG().then(data => {
         toDataUrl(data.image, setIMG);
@@ -94,36 +95,41 @@ function changeLife(){
     var imgLeft = document.getElementById("heart-left");
 
     if(lifeCounter == 1){
-        imgRight.src = "/spotdle_interface/images/cora_no_vida.png";
-        cofigurationImg();
+        imgRight.src = "/images/cora_no_vida.png";
+        setTimeout(cofigurationImg, 2000);
     }else if(lifeCounter == 0){
-        imgLeft.src = "/spotdle_interface/images/cora_no_vida.png";
+        imgLeft.src = "/images/cora_no_vida.png";
         restart();
     }
 }
 
-function correctAnswer(){
+function showAnswer(name){
     let image = document.getElementById("album-img");
     
     image.style.height = (275 + "px");
     image.style.width = (275 + "px");
     image.style.margin = 0 + "px";
+
+    document.getElementById("right-answer").innerText = name;
+}
+
+function correctAnswer(name){
+    showAnswer(name);
     puntos++;
     document.getElementById("points").innerText = puntos;
-
-    
 }
 
 function verifyKey(){
     let value_input = document.getElementById("input-search").value;
 
     if(value_input != name_album && value_input != name_album.toLowerCase()){
+        showAnswer(name_album);
         changeLife();
         lifeCounter--;
     }
     else{
-        correctAnswer()
-        setTimeout(cofigurationImg, 1000);
+        correctAnswer(name_album);
+        setTimeout(cofigurationImg, 2000);
     }
     document.getElementById("input-search").value = "";
 }
