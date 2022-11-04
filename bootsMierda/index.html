@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/home/style.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Spotdle | Home</title>
+    <script src="/home/index.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg clase-nav">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"> <img src="/images/logo-texto-spotdle.png" alt="" id="logo"></a>
+            <ul class="navbar-nav"> 
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                   <img src="/images/user.png" alt="" id="user">
+                </a>
+                <ul class="dropdown-menu menudrop">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+            </ul>
+        </div>
+      </nav>
+    <div id="content">
+        <div class="relleno"></div>
+        <div id="album">
+            <div class="container" onclick="window.location = '/album_game/album.html'">
+                <img src="/images/ALBUM.png" alt="album" class="index" id="image-album">
+                <p id="album-desc" class="index description-index">Albums</p>
+            </div>
+        </div>
+        <div id="lyric">
+            <div class="container" >
+                <img src="/images/LYRIC.png" alt="album" class="index" id="image-lyric">
+                <p id="album-desc" class="index description-index">Lyrics</p>
+            </div>
+        </div>
+        <div class="relleno"></div>
+    </div>
+
+    <div id="container-button">
+        <button id="LogIn" onclick="window.open('http://localhost:3000/redirect')">Log In</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</body>
+</html>
