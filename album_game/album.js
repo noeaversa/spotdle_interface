@@ -7,11 +7,11 @@ let used_albums_names = [];
 
 function nuevaIMG(){
     return new Promise(function(resolve, reject) {
-        fetch("http://nigga.spotdle.ar/giga-redirect/me/user/topartists", {
+        fetch("http://nigga.spotdle.ar/me/user/topartists", {
             credentials: "include",
         }).then(data => data.json()).then(data => {
             const randN = (Math.floor(Math.random() * data.items.length));
-            fetch("http://nigga.spotdle.ar/giga-redirect/me/user/artist/albums?id=" + data.items[randN].id, {
+            fetch("http://nigga.spotdle.ar/me/user/artist/albums?id=" + data.items[randN].id, {
                 credentials: "include",
             }).then(data => data.json()).then(data => {
                 console.log(data);
