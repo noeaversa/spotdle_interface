@@ -83,11 +83,12 @@ function setIMG(imgUrl) {
 function cofigurationImg(){
     document.getElementById("right-answer").innerText = "";
     document.getElementById("album-img").classList.add("blur");
+    document.getElementById("album-img").style.display = 'none !important';
 
     nuevaIMG().then(data => {
         toDataUrl(data.image, setIMG);
-        document.getElementById("loading-animation").style.display = 'none';
-        document.getElementById("album-img").style.display = 'flex';
+        document.getElementById("loading-animation").style.display = 'none !important';
+        document.getElementById("album-img").style.display = 'flex !important';
     })
     
 }
