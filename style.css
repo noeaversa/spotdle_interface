@@ -1,0 +1,79 @@
+@font-face {
+    font-family: Spotify;
+    src: url(Spotify-Font/GothamLight.ttf);
+}
+
+body, html{
+    background-color: #191414 !important;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Spotify;
+    font-weight: 700;
+}
+
+#user{
+    height: 45px;
+    width: 45px;
+}
+
+#logo{
+    height: 58.3px;
+    width: 150.5px;
+}
+
+.clase-nav{
+    background-color: black;
+}
+
+#ranking-nav{
+    color: #1ed760;
+}
+
+.menudrop{
+    position: absolute !important;
+    background-color: black !important;
+    font-family: Spotify, sans-serif !important;
+}
+
+.item-dropi{
+    color: #1ed760 !important;
+}
+
+.item-dropi:hover{
+    background-color: black !important;
+}
+
+.menudrop[data-bs-popper] {
+    top: 100%;
+    left: auto !important;
+    right: -0.78rem;
+}
+
+.dropdown-toggle::after {
+    border: 0px !important;
+    margin: 0px !important;
+    display: none !important;
+}
+
+#container-nav{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+#boton-nav{
+    height: 50px;
+    width: 150px;
+    border: 5px solid#1ed760;
+    border-radius: 10px;
+    font-size: 20px;
+    color: #1ed760;
+    font-weight: bold;
+}
+
+#boton-nav:hover{
+    background-color: #1ed760;
+    color: white;
+}

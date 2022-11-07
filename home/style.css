@@ -22,7 +22,7 @@
     filter: saturate(0%);
 }
 
-.container{
+.contenedor{
     height: 300px;
     width: 300px;
     right: 0;
@@ -61,6 +61,8 @@
     align-items: center;
     justify-content: center;
 }
+
+
 
 #LogIn{
     height: 50px;
@@ -101,7 +103,7 @@
         width: 100vw;
     }
 
-    .container{
+    .contenedor{
         height: 270px;
         width: 270px;
         border-radius: 15px;
@@ -144,7 +146,7 @@
     #container-button{
         top: 105vh;
     }
-    .container{
+    .contenedor{
         height: 220px;
         width: 220px;
         border-radius: 15px;
