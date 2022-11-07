@@ -86,9 +86,9 @@ function cofigurationImg(){
     document.getElementById("album-img").style.display = 'none !important';
 
     nuevaIMG().then(data => {
-        toDataUrl(data.image, setIMG);
         document.getElementById("loading-animation").style.display = 'none !important';
         document.getElementById("album-img").style.display = 'flex !important';
+        toDataUrl(data.image, setIMG);
     })
     
 }
