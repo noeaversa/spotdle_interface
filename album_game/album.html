@@ -9,10 +9,12 @@
     <link rel="stylesheet" href="/album_game/album.css">
     <title>Spotdle | Album</title>
     <script src="album.js"></script>
+    <script src="/nav.js"></script>
     <script>
+        chargeImgUser();
         nuevaIMG().then(data => {
             setIMG(data.image);
-        })
+        });
     </script>
 </head>
 
@@ -22,7 +24,6 @@
             <img src="/images/logo-texto-spotdle.png" alt="logo" id="logo" onclick="window.location = '/index.html'">
         </div>
         <div id="nav-content-right">
-            <a id="ranking-nav">rankings</a>
             <img src="/images/user.png" alt="user" id="user" class="images">
         </div>
     </nav>
@@ -31,7 +32,7 @@
         <p id="points">Puntos</p>
         <div id="img-container">
             <img id="album-img"
-                src="https://www.freeiconspng.com/thumbs/crescent-moon-png/crescent-moon-png-images-29.png" alt="">
+                src="" alt="">
         </div>
         <div id="lifes">
             <img src="/images/corazon_vida.png" alt="" class="hearts-life" id="heart-left">

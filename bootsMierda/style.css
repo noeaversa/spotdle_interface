@@ -33,6 +33,16 @@ body, html{
 
 .menudrop{
     position: absolute !important;
+    background-color: black !important;
+    font-family: Spotify;
+}
+
+.item-dropi{
+    color: #1ed760 !important;
+}
+
+.item-dropi:hover{
+    background-color: black !important;
 }
 
 .menudrop[data-bs-popper] {

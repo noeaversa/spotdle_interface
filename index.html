@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="/nav_style.css">
     <title>Spotdle | Home</title>
     <script src="/home/index.js"></script>
+    <script src="nav.js""></script>
+    <script>
+        chargeImgUser()
+    </script>
 </head>
 <body>
     <nav id="navbar">
@@ -15,14 +19,13 @@
             <img src="/images/logo-texto-spotdle.png" alt="logo" id="logo">
         </div>
         <div id="nav-content-right">
-            <a id="ranking-nav">rankings</a>
             <img src="/images/user.png" alt="user" id="user" class="images">
         </div>
     </nav>
 
     <div id="content">
         <div id="album">
-            <div class="container" onclick="window.location = '/album_game/album.html'">
+            <div class="container" onclick="EnterAlbum()">
                 <img src="/images/ALBUM.png" alt="album" class="index" id="image-album">
                 <p id="album-desc" class="index description-index">Albums</p>
             </div>
@@ -36,7 +39,7 @@
     </div>
 
     <div id="container-button">
-        <button id="LogIn" onclick="window.open('http://nigga.spotdle.ar/giga-redirect')">Log In</button>
+        <button id="LogIn" onclick="window.open('http://localhost:3000/redirect')">Log In</button>
     </div>
 </body>
 </html>
