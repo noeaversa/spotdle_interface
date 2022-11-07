@@ -78,15 +78,11 @@ function setIMG(imgUrl) {
     image.style.marginTop = (margin_top + "px");
 
     document.getElementById("album-img").classList.remove("blur");
-
-    document.getElementById("loading-animation").style.display = 'none !important';
-    document.getElementById("album-img").style.display = 'flex !important';
 }
 
 function cofigurationImg(){
     document.getElementById("right-answer").innerText = "";
     document.getElementById("album-img").classList.add("blur");
-    document.getElementById("album-img").style.display = 'none !important';
 
     nuevaIMG().then(data => {
         toDataUrl(data.image, setIMG);

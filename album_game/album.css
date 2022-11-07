@@ -20,7 +20,7 @@
     margin-top: -225px; /*valores entre 0 y -225*/
     margin-left: -225px; /*valores entre 0 y -225*/
     transition: filter 0.5s;
-    display: none;
+    display: flex;
 }
 
 
