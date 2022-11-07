@@ -132,7 +132,7 @@ function verifyKey(){
         changeLife();
         lifeCounter--;
     }
-    else if(name_album.includes(value_input) && value_input.length > 1){
+    else if(name_album.includes(value_input)){
         correctAnswer(name_album);
         setTimeout(cofigurationImg, 2000);
     }
