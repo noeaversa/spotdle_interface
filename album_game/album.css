@@ -1,6 +1,6 @@
 #game{
     position: absolute;
-    top: 13vh;
+    top: 15vh;
     display: flex;
     width: 100vw;
     align-items: center;
@@ -20,7 +20,9 @@
     margin-top: -225px; /*valores entre 0 y -225*/
     margin-left: -225px; /*valores entre 0 y -225*/
     transition: filter 0.5s;
+    display: none;
 }
+
 
 #lifes{
     display: flex;
@@ -35,15 +37,15 @@
     width: 35px;
 }
 
-#heart-right{
+#heart-center{
     margin-left: 10px;
+    margin-right: 10px;
 }
 
 #points{
     color: #1ed760;
     font-size: 20px;
 }
-
 
 #searchbar{
     margin-top: 2vh;

@@ -1,4 +1,4 @@
-let lifeCounter = 1;
+let lifeCounter = 2;
 let puntos = 0;
 let name_album;
 let image_url;
@@ -83,8 +83,11 @@ function setIMG(imgUrl) {
 function cofigurationImg(){
     document.getElementById("right-answer").innerText = "";
     document.getElementById("album-img").classList.add("blur");
+
     nuevaIMG().then(data => {
         toDataUrl(data.image, setIMG);
+        document.getElementById("album-img").style.display = 'flex';
+        document.getElementById("loading-animation").style.display = 'none';
     })
     
 }
@@ -92,12 +95,17 @@ function cofigurationImg(){
 
 function changeLife(){
     var imgRight = document.getElementById("heart-right");
+    var imgCenter = document.getElementById("heart-center");
     var imgLeft = document.getElementById("heart-left");
 
-    if(lifeCounter == 1){
-        imgRight.src = "/images/cora_no_vida.png";
+    
+    if(lifeCounter > 0){
+        if(lifeCounter == 2)
+            imgRight.src = "/images/cora_no_vida.png";
+        else 
+            imgCenter.src = "/images/cora_no_vida.png";
         setTimeout(cofigurationImg, 2000);
-    }else if(lifeCounter == 0){
+    }else{
         imgLeft.src = "/images/cora_no_vida.png";
         restart();
     }
@@ -126,6 +134,10 @@ function verifyKey(){
         showAnswer(name_album);
         changeLife();
         lifeCounter--;
+    }
+    else if(name_album.includes(value_input) && value_input.length > 1){
+        correctAnswer(name_album);
+        setTimeout(cofigurationImg, 2000);
     }
     else{
         correctAnswer(name_album);

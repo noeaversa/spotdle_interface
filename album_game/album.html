@@ -7,9 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/nav_style.css">
     <link rel="stylesheet" href="/album_game/album.css">
+    <link rel="stylesheet" href="/album_game/pruebaCarga.css">
     <title>Spotdle | Album</title>
     <script src="album.js"></script>
     <script src="/nav.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script>
         chargeImgUser();
         nuevaIMG().then(data => {
@@ -31,16 +33,17 @@
     <div id="game">
         <p id="points">Puntos</p>
         <div id="img-container">
-            <img id="album-img"
-                src="" alt="">
+            <img id="album-img" src="" alt="">
+            <lottie-player src="/images/loading.json" id="loading-animation" background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
         </div>
         <div id="lifes">
             <img src="/images/corazon_vida.png" alt="" class="hearts-life" id="heart-left">
+            <img src="/images/corazon_vida.png" alt="" class="hearts-life" id="heart-center">
             <img src="/images/corazon_vida.png" alt="" class="hearts-life" id="heart-right">
         </div>
         <div id="searchbar">
             <img src="/images/lupa.png" alt="lupa" id="lupa-search" onclick="verifyKey()">
-            <input type="text" placeholder="escriba respuesta" id="input-search" onkeypress="enterKeyPressed(event)">
+            <input type="text" placeholder="Escriba su respuesta" id="input-search" onkeypress="enterKeyPressed(event)">
         </div>
         <p id="right-answer"></p>
     </div>
