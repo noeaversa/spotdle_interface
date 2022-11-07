@@ -19,6 +19,7 @@
     flex-direction: column;
     width: 50vw;
     padding-left: 20px;
+    filter: saturate(0%);
 }
 
 .container{

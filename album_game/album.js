@@ -87,7 +87,6 @@ function cofigurationImg(){
     nuevaIMG().then(data => {
         toDataUrl(data.image, setIMG);
     })
-    
 }
 
 
