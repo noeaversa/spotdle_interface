@@ -78,6 +78,9 @@ function setIMG(imgUrl) {
     image.style.marginTop = (margin_top + "px");
 
     document.getElementById("album-img").classList.remove("blur");
+
+    document.getElementById("loading-animation").style.display = 'none !important';
+    document.getElementById("album-img").style.display = 'flex !important';
 }
 
 function cofigurationImg(){
@@ -86,8 +89,6 @@ function cofigurationImg(){
     document.getElementById("album-img").style.display = 'none !important';
 
     nuevaIMG().then(data => {
-        document.getElementById("loading-animation").style.display = 'none !important';
-        document.getElementById("album-img").style.display = 'flex !important';
         toDataUrl(data.image, setIMG);
     })
     
