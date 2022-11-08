@@ -141,12 +141,12 @@ function verifyKey(){
         setTimeout(cofigurationImg, 2000);
     }
     else{
-        for(let i = 0; i < name_album.length(); i++){
+        for(let i = 0; i < name_album.length; i++){
             if(value_input_lowerCase[i] == name_album[i].toLowerCase())
                 aux++;
         }   
 
-        if((name_album.length()/2) <= aux){
+        if((name_album.length / 2) <= aux){
             almostCorrect(name_album);
             setTimeout(cofigurationImg, 2000);
         } 
