@@ -166,9 +166,13 @@ function enterKeyPressed(event) {
     }
  }
 
+ function saveScore(puntos){
+    
+ }
+
  function restart(){
     window.alert("perdiste, hiciste " + puntos + " puntos en total");
-    
+    saveScore(puntos);
     lifeCounter = 2;
     puntos = 0;
     window.location.reload();
