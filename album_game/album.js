@@ -131,6 +131,7 @@ function almostCorrect(name){
 }
 
 function verifyKey(){
+    console.log("entre");
     let value_input = document.getElementById("input-search").value;
     let value_input_lowerCase = value_input.toLowerCase();
     let correctLetter = true;
@@ -143,16 +144,17 @@ function verifyKey(){
     }
     if(correctLetter == true && value_input.length() == name_album.length()){
         correctAnswer(name_album);
-    } else if(correctLetter == true)
+        setTimeout(cofigurationImg, 2000);
+    }else if(correctLetter == true){
         almostCorrect(name_album);
-    else if(correctLetter == false){
+        setTimeout(cofigurationImg, 2000);
+    }else if(correctLetter == false){
         showAnswer(name_album);
         changeLife();
         lifeCounter--;
     }
 
-    /*
-    if(value_input != name_album && value_input != name_album.toLowerCase()){
+    /*if(value_input != name_album && value_input != name_album.toLowerCase()){
         showAnswer(name_album);
         changeLife();
         lifeCounter--;
