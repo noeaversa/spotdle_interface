@@ -120,19 +120,45 @@ function showAnswer(name){
 
 function correctAnswer(name){
     showAnswer(name);
-    puntos++;
+    puntos += 2;
+    document.getElementById("points").innerText = puntos;
+}
+
+function almostCorrect(name){
+    showAnswer(name);
+    puntos ++;
     document.getElementById("points").innerText = puntos;
 }
 
 function verifyKey(){
     let value_input = document.getElementById("input-search").value;
+    let value_input_lowerCase = value_input.toLowerCase();
+    let correctLetter = true;
 
+    for(let i = 0; i < value_input.length(); i++){
+        if(value_input_lowerCase[i] == name_album[i].toLowerCase() && correctLetter == true)
+            correctLetter = true;
+        else
+            correctLetter = false;
+    }
+    if(correctLetter == true && value_input.length() == name_album.length()){
+        correctAnswer(name_album);
+    } else if(correctLetter == true)
+        almostCorrect(name_album);
+    else if(correctLetter == false){
+        showAnswer(name_album);
+        changeLife();
+        lifeCounter--;
+    }
+
+    /*
     if(value_input != name_album && value_input != name_album.toLowerCase()){
         showAnswer(name_album);
         changeLife();
         lifeCounter--;
     }
-    else if(name_album.includes(value_input)){
+
+    else if(name_album.includes(value_input) && name_album.length > 1){
         correctAnswer(name_album);
         setTimeout(cofigurationImg, 2000);
     }
@@ -141,6 +167,7 @@ function verifyKey(){
         setTimeout(cofigurationImg, 2000);
     }
     document.getElementById("input-search").value = "";
+    */
 }
 
 function enterKeyPressed(event) {
