@@ -10,6 +10,7 @@
     display: flex;
     align-items: flex-end;
     flex-direction: column;
+    font-family: Spotify, sans-serif !important;
     width: 50vw;
     padding-right: 20px;
 }
@@ -19,6 +20,7 @@
     flex-direction: column;
     width: 50vw;
     padding-left: 20px;
+    font-family: Spotify, sans-serif !important;
     filter: saturate(0%);
 }
 
@@ -51,6 +53,8 @@
 
 .description-index{
     font-size: 20px;
+    margin-top: 20px;
+    font-weight: bold;
 }
 
 #container-button{
@@ -62,21 +66,24 @@
     justify-content: center;
 }
 
+#container-nav{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
 
-
-#LogIn{
+#boton-nav{
     height: 50px;
     width: 150px;
     border: 5px solid#1ed760;
     border-radius: 10px;
-    background-color: #191414;
     font-size: 20px;
-    font-family: Spotify;
+    font-family: Spotify, sans-serif !important;
     color: #1ed760;
     font-weight: bold;
 }
 
-#LogIn:hover{
+#boton-nav:hover{
     background-color: #1ed760;
     color: white;
 }

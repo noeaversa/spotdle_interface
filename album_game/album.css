@@ -1,6 +1,6 @@
 #game{
     position: absolute;
-    top: 15vh;
+    top: 17vh;
     display: flex;
     width: 100vw;
     align-items: center;
@@ -22,7 +22,6 @@
     transition: filter 0.5s;
     display: flex;
 }
-
 
 #lifes{
     display: flex;
@@ -48,7 +47,7 @@
 }
 
 #searchbar{
-    margin-top: 2vh;
+    margin-top: 3vh;
     height: 6vh;
     border-radius: 15px;
     border: 1px solid #1ed760;
@@ -71,6 +70,7 @@
     font-family: Spotify;
     width: 150px;
     height: 20px;
+    font-size: 14px;
 }
 
 .blur {
