@@ -150,7 +150,7 @@ function enterKeyPressed(event) {
  }
 
  function restart(){
-    window.alert("perdiste ESTUPIDO ESTUPIDO ESTUPIDO :)");
+    window.alert("perdiste, hiciste " + puntos + " puntos en total");
     lifeCounter = 1;
     puntos = 0;
     window.location.reload();
