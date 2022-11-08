@@ -141,12 +141,12 @@ function verifyKey(){
         setTimeout(cofigurationImg, 2000);
     }
     else{
-        for(let i = 0; i < name_album.length(); i++){
+        for(let i = 0; i < name_album.length; i++){
             if(value_input_lowerCase[i] == name_album[i].toLowerCase())
                 aux++;
         }   
 
-        if((name_album.length()/2) <= aux){
+        if((name_album.length / 2) <= aux){
             almostCorrect(name_album);
             setTimeout(cofigurationImg, 2000);
         } 
@@ -157,22 +157,7 @@ function verifyKey(){
         }
     }
 
-    /*if(value_input != name_album && value_input != name_album.toLowerCase()){
-        showAnswer(name_album);
-        changeLife();
-        lifeCounter--;
-    }
-
-    else if(name_album.includes(value_input) && name_album.length > 1){
-        correctAnswer(name_album);
-        setTimeout(cofigurationImg, 2000);
-    }
-    else{
-        correctAnswer(name_album);
-        setTimeout(cofigurationImg, 2000);
-    }
     document.getElementById("input-search").value = "";
-    */
 }
 
 function enterKeyPressed(event) {
@@ -181,9 +166,13 @@ function enterKeyPressed(event) {
     }
  }
 
+ function saveScore(puntos){
+ }
+
  function restart(){
     window.alert("perdiste, hiciste " + puntos + " puntos en total");
-    lifeCounter = 1;
+    saveScore(puntos);
+    lifeCounter = 2;
     puntos = 0;
     window.location.reload();
 }
