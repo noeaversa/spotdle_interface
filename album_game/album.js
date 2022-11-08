@@ -153,7 +153,8 @@ function verifyKey(){
         changeLife();
         lifeCounter--;
     }
-
+    
+    document.getElementById("input-search").value = "";
     /*if(value_input != name_album && value_input != name_album.toLowerCase()){
         showAnswer(name_album);
         changeLife();
