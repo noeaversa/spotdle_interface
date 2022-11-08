@@ -167,7 +167,6 @@ function enterKeyPressed(event) {
  }
 
  function saveScore(puntos){
-    
  }
 
  function restart(){
