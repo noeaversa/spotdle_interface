@@ -135,26 +135,28 @@ function verifyKey(){
     let value_input = document.getElementById("input-search").value;
     let value_input_lowerCase = value_input.toLowerCase();
     let correctLetter = true;
-
-    for(let i = 0; i < value_input.length(); i++){
-        if(value_input_lowerCase[i] == name_album[i].toLowerCase() && correctLetter == true)
-            correctLetter = true;
-        else
-            correctLetter = false;
-    }
-    if(correctLetter == true && value_input.length() == name_album.length()){
+    let aux = 0;
+    if(name_album.toLowerCase() == value_input_lowerCase){
         correctAnswer(name_album);
         setTimeout(cofigurationImg, 2000);
-    }else if(correctLetter == true){
-        almostCorrect(name_album);
-        setTimeout(cofigurationImg, 2000);
-    }else if(correctLetter == false){
-        showAnswer(name_album);
-        changeLife();
-        lifeCounter--;
     }
-    
-    document.getElementById("input-search").value = "";
+    else{
+        for(let i = 0; i < name_album.length(); i++){
+            if(value_input_lowerCase[i] == name_album[i].toLowerCase())
+                aux++;
+        }   
+
+        if((name_album.length()/2) <= aux){
+            almostCorrect(name_album);
+            setTimeout(cofigurationImg, 2000);
+        } 
+        else {
+            showAnswer(name_album);
+            changeLife();
+            lifeCounter--;
+        }
+    }
+
     /*if(value_input != name_album && value_input != name_album.toLowerCase()){
         showAnswer(name_album);
         changeLife();
