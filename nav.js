@@ -11,7 +11,7 @@ function loadDataUser(){
             credentials: "include"
         }).then(data => data.json()).then(data => {
             console.log(data);
-            if(data[0].url != null || data[0].url != undefined || data[0].url != " ")
+            if(data != null || data != undefined || data != " ")
                 document.getElementById("name-user").value = data; 
         });
     }
