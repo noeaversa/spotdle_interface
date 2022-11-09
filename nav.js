@@ -1,4 +1,4 @@
-function chargeImgUser(){
+function loadDataUser(){
     if(document.cookie != null || document.cookie != undefined || document.cookie != " "){
         fetch("https://nigga.spotdle.ar/me/user/image", {
             credentials: "include",
