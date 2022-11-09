@@ -17,11 +17,13 @@ body, html{
     border-radius: 50px;
     height: 45px;
     width: 45px;
+    cursor: pointer;
 }
 
 #logo{
     height: 58.3px;
     width: 150.5px;
+    cursor: pointer;
 }
 
 .clase-nav{
@@ -40,6 +42,7 @@ body, html{
 
 .item-dropi{
     color: #1ed760 !important;
+    cursor: pointer;
 }
 
 .item-dropi:hover{

@@ -34,6 +34,7 @@
     justify-content: center;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 }
 
 #image-album{
