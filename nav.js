@@ -18,7 +18,7 @@ function logOut(bool){
             window.alert("ATENCION, los datos del juegos no seran guardados ¿Esta seguro que quiere salir?");
         let value_cookie = document.cookie;
         document.cookie = value_cookie + '; Expires=Thu, 01 Jan 1970 00:00:01 GMT;'
-        window.location.replace("https://spotdle.ar/"); 
         document.getElementById("user").src = "/images/user.png";    
+        window.location.reload(); 
     }
 }
