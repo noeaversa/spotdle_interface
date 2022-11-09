@@ -83,6 +83,7 @@
     font-family: Spotify, sans-serif !important;
     color: #1ed760;
     font-weight: bold;
+    display: flex;
 }
 
 #boton-nav:hover{
