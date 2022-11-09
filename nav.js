@@ -7,12 +7,12 @@ function loadDataUser(){
                 document.getElementById("user").src = data[0].url; 
         });
 
-        fetch("https://nigga.spotdle.ar/me/user/name", {
+        fetch("https://nigga.spotdle.ar/me/user/", {
             credentials: "include"
         }).then(data => data.json()).then(data => {
-            console.log(data);
-            if(data != null || data != undefined || data != " ")
-                document.getElementById("name-user").value = data; 
+            console.log(data.name);
+            if(data.name != null || data.name != undefined || data.name != " ")
+            document.getElementById("name-user") = data; 
         });
     }
 }
