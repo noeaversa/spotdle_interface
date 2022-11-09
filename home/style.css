@@ -67,6 +67,7 @@
 }
 
 #container-nav{
+    display: flex;
     width: 100%;
     align-items: center;
     justify-content: center;
@@ -88,6 +89,19 @@
     color: white;
 }
 
+#container-welcome{
+    margin-top: 5vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+}
+
+#welcome-user{
+    color: #1ed760;
+    font-family: Spotify, sans-serif !important;
+    font-size: 20px;
+}
 @media screen and (max-width: 700px) {
     #content{
         flex-direction: column;
