@@ -12,8 +12,8 @@ function loadDataUser(){
         }).then(data => data.json()).then(data => {
             console.log(data.name);
             if(data.name != null || data.name != undefined || data.name != " ")
-            document.getElementById("name-user") = data; 
-        });
+            document.getElementById("name-user").innerText = "@" + data.name; 
+        }); 
     }
 }
 
