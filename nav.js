@@ -12,7 +12,9 @@ function chargeImgUser(){
     }
 }
 
-function logOut(){
+function logOut(bool){
+    if(bool == true)
+        window.alert("ATENCION, los datos del juegos no seran guardados ¿Esta seguro que quiere salir?");
     document.cookie = null;
     window.location.replace("https://spotdle.ar/");
 }
