@@ -13,7 +13,7 @@ function loadDataUser(){
             console.log(data.name);
             if(data.name != null || data.name != undefined || data.name != " ")
             document.getElementById("name-user").innerText = "@" + data.name; 
-            document.getElementById("welcome-user").innerText = "¡Hola, " + data.name + "!";
+            document.getElementById("welcome-user").innerHTML = "¡Hola, " + data.name + "!";
         }); 
     }
 }
