@@ -20,13 +20,11 @@ function loadDataUser(){
 
 
 function logOut(bool){
-    if(document.cookie != null || document.cookie != undefined || document.cookie != " "){
-        if(bool == true)
+        if(bool == true) {
             window.alert("ATENCION, los datos del juegos no seran guardados ¿Esta seguro que quiere salir?");
+        }
         clearCookies();
-        document.getElementById("user").src = "/images/user.png";    
         window.location.reload(); 
-    }
 }
 
 function clearCookies() {
