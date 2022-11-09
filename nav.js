@@ -9,9 +9,19 @@ function chargeImgUser(){
                 
             }
         });
+        fetch("https://nigga.spotdle.ar/me/user/name", {
+            credentials: "include"
+        }).then(data => data.json()).then(data => {
+            console.log(data);
+            /*
+            if(data[0].url != null || data[0].url != undefined || data[0].url != " ")
+                document.getElementById("name-user").value = data; 
+            */
+        });
     }
 }
 
+/*
 function logOut(bool){
     if(document.cookie != null || document.cookie != undefined || document.cookie != " "){
         if(bool == true)
@@ -38,3 +48,4 @@ function clearCookies() {
         }
     }
 }
+*/
