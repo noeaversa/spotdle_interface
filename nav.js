@@ -17,7 +17,8 @@ function logOut(bool){
         if(bool == true)
             window.alert("ATENCION, los datos del juegos no seran guardados ¿Esta seguro que quiere salir?");
         document.cookie = " ";
-        window.location.replace("https://spotdle.ar/");     
+        window.location.replace("https://spotdle.ar/"); 
+        document.getElementById("user").src = "/images/user.png";    
     }
    
 }
