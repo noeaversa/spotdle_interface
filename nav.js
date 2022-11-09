@@ -11,3 +11,8 @@ function chargeImgUser(){
         });
     }
 }
+
+function logOut(){
+    document.cookie = null;
+    window.location.replace("https://spotdle.ar/");
+}
