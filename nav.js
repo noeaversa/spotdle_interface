@@ -15,6 +15,10 @@ function loadDataUser(){
             document.getElementById("name-user").innerText = "@" + data.name; 
             document.getElementById("welcome-user").innerHTML = "¡Hola, " + data.name + "!";
         }); 
+        document.getElementById("boton-nav").style.display = "none";
+    }
+    else{
+        document.getElementById("boton-nav").style.display = "flex";
     }
 }
 
