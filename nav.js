@@ -18,7 +18,7 @@ function loadDataUser(){
     }
 }
 
-/*
+
 function logOut(bool){
     if(document.cookie != null || document.cookie != undefined || document.cookie != " "){
         if(bool == true)
@@ -45,4 +45,3 @@ function clearCookies() {
         }
     }
 }
-*/
