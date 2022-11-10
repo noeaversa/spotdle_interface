@@ -1,4 +1,6 @@
 function loadDataUser(){
+    let boton_nav = document.getElementById("boton-nav");
+    let welcome = document.getElementById("welcome-user");
     if(document.cookie != null || document.cookie != undefined || document.cookie != " "){
         fetch("https://nigga.spotdle.ar/me/user/image", {
             credentials: "include",
@@ -11,19 +13,21 @@ function loadDataUser(){
             credentials: "include"
         }).then(data => data.json()).then(data => {
             console.log(data.name);
-            if(data.name != null || data.name != undefined || data.name != " "){
+            if(data.name !== null || data.name !== undefined || data.name !== " "){
                 document.getElementById("name-user").innerText = "@" + data.name;
-                if(document.getElementById("welcome-user") != null || document.getElementById("welcome-user") != undefined || document.getElementById("welcome-user") != " ") {
+                if(welcome !== null || welcome !== undefined || welcome !== " ") {
                     document.getElementById("welcome-user").innerHTML = "¡Hola, " + data.name + "!";
                 }
             }
         }); 
-        if(document.getElementById("boton-nav") !== null || document.getElementById("boton-nav") !== undefined || document.getElementById("boton-nav") !== " ")
+        if(boton_nav !== null || boton_nav("boton-nav") !== undefined || boton_nav !== " "){
             document.getElementById("boton-nav").style.display = "none";
+        } 
     }
     else{
-        if(document.getElementById("boton-nav") !== null || document.getElementById("boton-nav") !== undefined || document.getElementById("boton-nav") !== " ")
+        if(boton_nav !== null || boton_nav !== undefined || boton_nav !== " "){
             document.getElementById("boton-nav").style.display = "flex";
+        }
     }
 }
 
