@@ -11,16 +11,19 @@ function loadDataUser(){
             credentials: "include"
         }).then(data => data.json()).then(data => {
             console.log(data.name);
-            if(data.name != null || data.name != undefined || data.name != " ")
-            document.getElementById("name-user").innerText = "@" + data.name;
-            if(document.getElementById("welcome-user") !== undefined) {
-                document.getElementById("welcome-user").innerHTML = "¡Hola, " + data.name + "!";
+            if(data.name != null || data.name != undefined || data.name != " "){
+                document.getElementById("name-user").innerText = "@" + data.name;
+                if(document.getElementById("welcome-user") !== undefined) {
+                    document.getElementById("welcome-user").innerHTML = "¡Hola, " + data.name + "!";
+                }
             }
         }); 
-        document.getElementById("boton-nav").style.display = "none";
+        if(document.getElementById("boton-nav") !== undefined)
+            document.getElementById("boton-nav").style.display = "none";
     }
     else{
-        document.getElementById("boton-nav").style.display = "flex";
+        if(document.getElementById("boton-nav") !== undefined)
+            document.getElementById("boton-nav").style.display = "flex";
     }
 }
 
