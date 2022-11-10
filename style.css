@@ -52,7 +52,7 @@ body, html{
 .menudrop[data-bs-popper] {
     top: 100%;
     left: auto !important;
-    right: -0.78rem;
+    right: -12px;
 }
 
 .dropdown-toggle::after {

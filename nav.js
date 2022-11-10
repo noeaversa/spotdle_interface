@@ -18,15 +18,14 @@ function loadDataUser(){
                 }
             }
         }); 
-        if(document.getElementById("boton-nav") != null || document.getElementById("boton-nav") != undefined || document.getElementById("boton-nav") != " ")
+        if(document.getElementById("boton-nav") !== null || document.getElementById("boton-nav") !== undefined || document.getElementById("boton-nav") !== " ")
             document.getElementById("boton-nav").style.display = "none";
     }
     else{
-        if(document.getElementById("boton-nav") != null || document.getElementById("boton-nav") != undefined || document.getElementById("boton-nav") != " ")
+        if(document.getElementById("boton-nav") !== null || document.getElementById("boton-nav") !== undefined || document.getElementById("boton-nav") !== " ")
             document.getElementById("boton-nav").style.display = "flex";
     }
 }
-
 
 function logOut(bool){
         if(bool == true) {
