@@ -1,15 +1,17 @@
+function loadImgGame(){
+    fetch("https://nigga.spotdle.ar/me/user/image", {
+        credentials: "include",
+    }).then(data => data.json()).then(data => {
+        if(data[0].url != null || data[0].url != undefined || data[0].url != " ")
+            document.getElementById("user").src = data[0].url; 
+    });
+}
+
 function loadDataUser(){
     let boton_nav = document.getElementById("container-button");
     let welcome = document.getElementById("welcome-user");
 
     if(document.cookie != null || document.cookie != undefined || document.cookie != " "){
-        fetch("https://nigga.spotdle.ar/me/user/image", {
-            credentials: "include",
-        }).then(data => data.json()).then(data => {
-            if(data[0].url != null || data[0].url != undefined || data[0].url != " ")
-                document.getElementById("user").src = data[0].url; 
-        });
-
         fetch("https://nigga.spotdle.ar/me/user/", {
             credentials: "include"
         }).then(data => data.json()).then(data => {
