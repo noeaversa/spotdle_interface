@@ -1,6 +1,7 @@
 function loadDataUser(){
-    let boton_nav = document.getElementById("boton-nav");
+    let boton_nav = document.getElementById("container-button");
     let welcome = document.getElementById("welcome-user");
+
     if(document.cookie != null || document.cookie != undefined || document.cookie != " "){
         fetch("https://nigga.spotdle.ar/me/user/image", {
             credentials: "include",
@@ -20,13 +21,13 @@ function loadDataUser(){
                 }
             }
         }); 
-        if(boton_nav !== null || boton_nav("boton-nav") !== undefined || boton_nav !== " "){
-            document.getElementById("boton-nav").style.display = "none";
+        if(boton_nav !== null || boton_nav !== undefined || boton_nav !== " "){
+            document.getElementById("container-button").style.display = "none";
         } 
     }
     else{
         if(boton_nav !== null || boton_nav !== undefined || boton_nav !== " "){
-            document.getElementById("boton-nav").style.display = "flex";
+            document.getElementById("container-button").style.display = "flex";
         }
     }
 }
