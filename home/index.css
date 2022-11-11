@@ -1,0 +1,142 @@
+#page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    height: calc(100% - 85px);
+    overflow-y: scroll;
+    width: 100%;
+}
+
+#container-welcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 15%;
+}
+
+#welcome-user {
+    font-family: Spotify, sans-serif !important;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #1ed760;
+}
+
+#play-buttons-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 8px;
+    border-radius: 15px;
+    border: 5px solid #1ed760;
+    width: 300px;
+    height: 300px;
+}
+
+#play-album + #play-lyrics{
+    margin-left: 20px;
+}
+
+#play-album {
+    cursor: pointer;
+}
+
+#play-lyrics {
+    filter: saturate(0);
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.play-button-image {
+    object-fit: contain;
+    width: 200px;
+}
+
+.play-button-text {
+    font-family: Spotify, sans-serif !important;
+    font-size: 20px;
+    color: #1ed760;
+    font-weight: bolder;
+    margin-top: 20px;
+}
+
+#container-login-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex: 1;
+    height: 100%;
+}
+
+#login-button{
+    color: #1ed760;
+    font-family: Spotify, sans-serif !important;
+    border: 5px solid#1ed760;
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: Spotify, sans-serif !important;
+    font-weight: bold;
+    width: 150px;
+}
+
+#login-button:hover{
+    background-color: rgb(30, 215, 96);
+    color: white;
+}
+
+@media screen and (max-width: 700px) {
+    #play-buttons-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #play-album + #play-lyrics{
+        margin-left: 0px;
+        margin-top: 50px;
+    }
+
+    .contenedor {
+        max-height: 250px;
+        max-width: 250px;
+        border-radius: 15px;
+    }
+
+    .play-button-image {
+        width: 150px;
+    }
+
+    #container-welcome {
+        height: 10%;
+    }
+}
+
+@media screen and (max-height: 810px) {
+    #container-welcome {
+        height: 25%;
+        padding: 25px;
+    }
+
+    #container-login-button {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+}
