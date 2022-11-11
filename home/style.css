@@ -111,7 +111,7 @@
     }
 
     #lyric{
-        margin-top: 10vh;
+        margin-top: 5vh;
         align-items: center;
         justify-content: center;
         padding-left: 0px;
@@ -121,6 +121,7 @@
     #album{
         align-items: center;
         justify-content: center;
+        margin-top: 5vh;
         padding-right: 0px;
         width: 100vw;
     }
@@ -157,16 +158,17 @@
     #content{
         top: 20vh;
     }
-
+/*
     #container-button{
         top: 115vh;
     }
+    */
 }
 
 @media screen and (max-width: 400px) and (max-height: 700px){
 
     #container-button{
-        top: 105vh;
+        margin-top: 13vh;
     }
     .contenedor{
         height: 220px;
