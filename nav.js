@@ -1,35 +1,44 @@
-function loadImgGame(){
-    fetch("https://nigga.spotdle.ar/me/user/image", {
-        credentials: "include",
-    }).then(data => data.json()).then(data => {
-        if(data[0].url != null || data[0].url != undefined || data[0].url != " ")
-            document.getElementById("user").src = data[0].url; 
-    });
-}
-
 function loadDataUser(){
     let boton_nav = document.getElementById("container-button");
     let welcome = document.getElementById("welcome-user");
+    console.log(boton_nav)
 
-    if(document.cookie != null || document.cookie != undefined || document.cookie != " "){
+    if(document.cookie != null && document.cookie != undefined && document.cookie != ""){
+        console.log("Hay cookies")
+        fetch("https://nigga.spotdle.ar/me/user/image", {
+            credentials: "include",
+        }).then(data => data.json()).then(data => {
+            if(data[0].url != null && data[0].url != undefined && data[0].url != "")
+                document.getElementById("user").src = data[0].url; 
+        });   fetch("https://nigga.spotdle.ar/me/user/image", {
+            credentials: "include",
+        }).then(data => data.json()).then(data => {
+            if(data[0].url != null && data[0].url != undefined && data[0].url != "")
+                document.getElementById("user").src = data[0].url; 
+        });
+
         fetch("https://nigga.spotdle.ar/me/user/", {
             credentials: "include"
         }).then(data => data.json()).then(data => {
             console.log(data.name);
-            if(data.name !== null || data.name !== undefined || data.name !== " "){
+            if(data.name !== null && data.name !== undefined && data.name !== ""){
                 document.getElementById("name-user").innerText = "@" + data.name;
-                if(welcome !== null || welcome !== undefined || welcome !== " ") {
+                if(welcome !== null && welcome !== undefined && welcome !== "") {
                     document.getElementById("welcome-user").innerHTML = "¡Hola, " + data.name + "!";
                 }
             }
         }); 
-        if(boton_nav !== null || boton_nav !== undefined || boton_nav !== " "){
+        if(boton_nav !== null && boton_nav !== undefined && boton_nav !== ""){
+            console.log("Hay boton con cookies")
             document.getElementById("container-button").style.display = "none";
+            document.getElementById("boton-nav").style.display = "none";
         } 
-    }
-    else{
-        if(boton_nav !== null || boton_nav !== undefined || boton_nav !== " "){
+    }else{
+        console.log("No hay cookies");
+        if(boton_nav !== null && boton_nav !== undefined && boton_nav !== ""){
+            console.log("Hay boton")
             document.getElementById("container-button").style.display = "flex";
+            document.getElementById("boton-nav").style.display = "flex";
         }
     }
 }
