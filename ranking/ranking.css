@@ -1,0 +1,33 @@
+#container-table-ranking{
+    margin-top: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#table-ranking{
+    font-family: Spotify, 'sans-serif' !important;
+    height: 25vh;
+    width: 70vw;
+    border: 1px solid #1ed760;
+}
+
+.top{
+    width: 60px;
+}
+
+th{
+    border: 1px solid #1ed760;
+    background-color: #1ed760;
+    color: #191414;
+    padding-left: 1vw;
+}
+
+tr{
+    border-bottom: 1px solid #1ed760 ;
+    color: #1ed760;
+}
+td{
+    padding-left: 2vw;
+    border: 1px solid #1ed760;
+}
