@@ -1,6 +1,6 @@
 function getRanking(q) {
     return new Promise((resolve, reject) => {
-        fetch("http://localhost:3000/ranking/top?q=" + q, {
+        fetch("https://nigga.spotdle.ar/ranking/top?q=" + q, {
             credentials: "include"
         }).then(data => {
             data.json().then(data => {

@@ -1,5 +1,5 @@
 function EnterAlbum(){
-    fetch("http://localhost:3000/me/user", {
+    fetch("https://nigga.spotdle.ar/me/user", {
             credentials: "include",
         }).then(data => data.json()).then(data => {
             window.location = "/album_game/album.html";

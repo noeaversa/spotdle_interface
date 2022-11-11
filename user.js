@@ -1,6 +1,6 @@
 function getUserImages() {
     return new Promise((resolve, reject) => {
-        fetch("http://localhost:3000/me/user/image", {
+        fetch("https://nigga.spotdle.ar/me/user/image", {
             credentials: "include",
         }).then(data => {
             data.json().then(data => {
@@ -14,7 +14,7 @@ function getUserImages() {
 
 function getUser() {
     return new Promise((resolve, reject) => {
-        fetch("http://localhost:3000/me/user/", {
+        fetch("https://nigga.spotdle.ar/me/user/", {
             credentials: "include"
         }).then(data => {
             data.json().then(data => {
@@ -28,7 +28,7 @@ function getUser() {
 
 function saveScore(score) {
     return new Promise((resolve, reject) => {
-        fetch("http://localhost:3000/me/user/score/save/", {
+        fetch("https://nigga.spotdle.ar/me/user/score/save/", {
             method: "POST",
             credentials: "include",
             headers: {
