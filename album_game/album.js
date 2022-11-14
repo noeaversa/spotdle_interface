@@ -167,9 +167,14 @@ function enterKeyPressed(event) {
  }
 
  function restart(){
-    window.alert("perdiste, hiciste " + puntos + " puntos en total");
-    saveScore(puntos);
-    lifeCounter = 2;
-    puntos = 0;
-    window.location.reload();
+    saveScore(puntos).then( data => {
+        window.alert("perdiste, hiciste " + puntos + " puntos en total");
+        lifeCounter = 2;
+        puntos = 0;
+        window.location.reload();
+    }).catch( error => {
+        window.alert("Ocurrio un error al guardar los puntos");
+        window.location.reload();
+    });
+    
 }
